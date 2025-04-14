@@ -1,0 +1,10 @@
+\zml?|version="1.1"|;
+\xml?|version="1.0",encoding="UTF-8"|;
+
+
+\root<
+
+  &import|src="document/manuscript/lesson/1-lesson.zml"|;
+  &import|src="document/manuscript/lesson/1-explanation.zml"|;
+
+>

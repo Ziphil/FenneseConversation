@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+@use "../variable.scss" as *;
+@use "sass:math" as *;
+
+
+.situation {
+  margin-block-end: 16q;
+  font-weight: bold;
+  line-height: $line-height;
+}
+
+.shaleian-conversation {
+  column-gap: 10q;
+  row-gap: 12q;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: baseline;
+}
+
+.shaleian-conversation-item {
+  display: contents;
+}
+
+.shaleian-conversation-name {
+  font-size: 12.5q;
+  text-align: end;
+  flex: 0 0 auto;
+  &::after {
+    margin-inline-start: 0.2em;
+    content: ":";
+  }
+}
+
+.shaleian-conversation-sentence {
+  font-size: 20q;
+  line-height: 2;
+  word-spacing: 0.1em;
+  flex: 1 1 auto;
+}
+
+.shaleian-conversation-emphasis {
+  font-weight: bold;
+  font-style: initial;
+}
+
+.japanese-conversation {
+  column-gap: 6q;
+  row-gap: 8q;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: baseline;
+  break-before: page;
+}
+
+.japanese-conversation-item {
+  display: contents;
+}
+
+.japanese-conversation-name {
+  font-size: 10q;
+  text-align: end;
+  flex: 0 0 auto;
+  &::after {
+    margin-inline-start: 0.2em;
+    content: ":";
+  }
+}
+
+.japanese-conversation-sentence {
+  line-height: $line-height;
+  flex: 1 1 auto;
+}

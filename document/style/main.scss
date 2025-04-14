@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+@use "reset.scss";
+@use "font.scss";
+@use "page.scss";
+@use "article/lesson.scss";
+@use "article/explanation.scss";
+@use "block/conversation.scss";
+@use "block/word-list.scss";
+@use "block/section.scss";
+@use "block/sentence-list.scss";
+@use "block/figure-container.scss";
+@use "block/normal-table.scss";
+@use "inline/common.scss";
+@use "inline/basic.scss";

@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+@use "../variable.scss" as *;
+@use "sass:math" as *;
+
+
+.section {
+  break-inside: avoid;
+  &:not(:first-child) {
+    margin-block: 24q;
+  }
+}
+
+.section-title {
+  margin-block-end: 12q;
+  padding-block: 2q;
+  padding-inline-start: 6q;
+  font-size: 110%;
+  color: white;
+  background-image: linear-gradient(to right, $dark-color, $dark-color 80%, transparent);
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.section-title-number {
+  font-size: 130%;
+  font-family: $special-font-family;
+  font-weight: bold;
+  display: block;
+}
+
+.section-title-text {
+  margin-inline-start: 0.5em;
+  font-weight: bold;
+  display: block;
+}
+
+.section-paragraph {
+  margin-block: 8q;
+  line-height: $line-height;
+  text-align: justify;
+}

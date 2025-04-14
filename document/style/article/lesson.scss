@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+@use "../variable.scss" as *;
+@use "sass:math" as *;
+
+
+$lesson-header-height: 80q;
+$lesson-header-top-margin: 20q;
+
+.lesson {
+  break-before: left;
+  page: lesson;
+}
+
+.lesson-header {
+  width: calc(100vw + $page-margin-inner + $page-margin-outer);
+  height: $lesson-header-height;
+  margin-block-start: $lesson-header-top-margin;
+  margin-block-end: $page-block-gap;
+  column-gap: 12q;
+  color: white;
+  background-color: $dark-color;
+  display: flex;
+  &[data-position="left"] {
+    margin-inline-start: - $page-margin-outer;
+    margin-inline-end: - $page-margin-inner;
+    padding-inline-start: $page-margin-outer;
+    position: running(lesson-left);
+  }
+  &[data-position="right"] {
+    margin-inline-start: - $page-margin-inner;
+    margin-inline-end: - $page-margin-outer;
+    padding-inline-end: $page-margin-outer; 
+    position: running(lesson-right);
+  }
+}
+
+.lesson-header-number {
+  font-size: 64q;
+  font-family: $special-font-family;
+  font-weight: bold;
+  flex: 0 0 auto;
+  align-self: center;
+  position: relative;
+}
+
+.lesson-header-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.lesson-header-column-top {
+  font-size: 16q;
+  letter-spacing: 0.05em;
+  font-family: $sans-font-family;
+  color: $pale-dark-color;
+  display: flex;
+  align-items: center;
+  flex: 5 5 0q;
+}
+
+.lesson-header-column-bottom {
+  font-size: 16q;
+  letter-spacing: 0.05em;
+  border-block-start: dotted 3q white;
+  display: flex;
+  align-items: center;
+  flex: 8 8 0q;
+  &[data-position="right"] {
+    justify-content: flex-end;
+  }
+}
+
+.lesson-header-title {
+  font-size: 24q;
+  font-weight: bold;
+}
+
+.lesson-header-goal {
+  font-size: 11q;
+  line-height: $line-height;
+  list-style: none;
+}
+
+.lesson-header-goal-item {
+  &::before {
+    margin-inline-end: 0.4em;
+    width: 0.6em * div(tan(60deg), 2);
+    height: 0.6em;
+    background-color: $pale-dark-color;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    transform: translate(0em, -0.1em);
+    display: inline-block;
+    content: "";
+  }
+}
+
+@page lesson:left {
+  margin-block-start: $lesson-header-height + $lesson-header-top-margin + $page-block-gap;
+  @top-center {
+    content: element(lesson-left);
+  }
+}
+
+@page lesson:right {
+  margin-block-start: $lesson-header-height + $lesson-header-top-margin + $page-block-gap;
+  @top-center {
+    content: element(lesson-right);
+  }
+}

@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@use "../variable.scss" as *;
+@use "sass:math" as *;
+
+
+.sentence-list {
+  margin-block: 8q;
+  margin-inline: 8q;
+  line-height: $line-height;
+  break-inside: avoid;
+}
+
+.sentence-item {
+  margin-block: 4q;
+  column-gap: 12q;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  break-inside: avoid;
+}
+
+.sentence-item-shaleian {
+  margin-inline-start: 0.8em;
+  font-size: 125%;
+  flex: 5 5 0q;
+  &::before {
+    margin-inline-start: -0.8em;
+    margin-inline-end: 0.8em - (0.5em * div(tan(60deg), 2));
+    width: 0.5em * div(tan(60deg), 2);
+    height: 0.5em;
+    background-color: $pale-dark-color;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    transform: translate(0em, -0.1em);
+    display: inline-block;
+    content: "";
+  }
+}
+
+.sentence-item-japanese {
+  text-align: justify;
+  flex: 4 4 0q;
+}
+
+.sentence-emphasis {
+  .sentence-item-shaleian & {
+    padding-inline: 0.2em;
+    border: solid $border-width $dark-color;
+  }
+  .sentence-item-japanese & {
+    text-decoration-line: underline;
+    text-decoration-color: $dark-color;
+    text-decoration-thickness: $border-width;
+  }
+}

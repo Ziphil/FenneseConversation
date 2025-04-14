@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+@use "../variable.scss" as *;
+@use "sass:math" as *;
+
+
+.word-list {
+  margin-inline-start: - $page-margin-inner;
+  margin-inline-end: - $page-margin-outer;
+  padding-inline-start: $page-margin-inner;
+  padding-inline-end: $page-margin-outer;
+  padding-block-start: 16q;
+  padding-block-end: $page-margin-bottom;
+  column-gap: 20q;
+  font-size: 90%;
+  transform: translate(0q, $page-margin-bottom);
+  line-height: $line-height;
+  background-color: $light-color;
+  display: block;
+  columns: 2;
+  column-fill: balance-all;
+  column-rule: solid $border-width $dark-color;
+  float-reference: page;
+  float: bottom;
+  position: relative;
+}
+
+.word-item {
+  column-gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.equivalent-item-category,
+.equivalent-item-class {
+  margin-inline-end: 0.4em;
+  padding-block: 0.15em;
+  padding-inline: 0.15em; 
+  font-size: 75%;
+  line-height: 1;
+  display: inline-block;
+}
+
+.equivalent-item-category {
+  color: white;
+  background-color: $dark-color;
+}
+
+.equivalent-item-class {
+  padding-block: calc(0.15em - #{$border-width});
+  padding-inline: calc(0.15em - #{$border-width}); 
+  border: solid $border-width $dark-color;
+}
+
+.word-item-shaleian {
+  min-width: 72q;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.word-item-conjugated {
+  font-size: 80%;
+  font-weight: normal;
+  margin-inline-start: 0.3em;
+}
+
+.equivalent-list {
+  column-gap: 0.4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+
+.equivalent-item {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
