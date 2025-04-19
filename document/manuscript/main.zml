@@ -6,5 +6,7 @@
 
   &import|src="document/manuscript/lesson/1-lesson.zml"|;
   &import|src="document/manuscript/lesson/1-explanation.zml"|;
+  &import|src="document/manuscript/lesson/2-lesson.zml"|;
+  &import|src="document/manuscript/lesson/2-explanation.zml"|;
 
 >
