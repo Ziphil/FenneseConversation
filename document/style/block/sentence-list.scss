@@ -7,7 +7,6 @@
 .sentence-list {
   margin-block: 8q;
   margin-inline: 8q;
-  line-height: $sentence-line-height;
   break-inside: avoid;
 }
 
@@ -23,6 +22,7 @@
 .sentence-item-shaleian {
   margin-inline-start: 0.8em;
   font-size: 115%;
+  line-height: $sentence-line-height;
   flex: 5 5 0q;
   &::before {
     margin-inline-start: -0.8em;
@@ -38,6 +38,7 @@
 }
 
 .sentence-item-japanese {
+  line-height: $line-height;
   text-align: justify;
   flex: 4 4 0q;
 }
