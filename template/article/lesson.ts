@@ -22,7 +22,7 @@ manager.registerElementRule("lesson", "root", (transformer, document, element) =
 
 manager.registerElementFactory("lesson-header-left", (transformer, document, element) => {
   const self = document.createDocumentFragment();
-  const number = element.parentNode!.searchXpath("preceding-sibling::lesson").length + 1;
+  const number = element.searchXpath("preceding-sibling::lesson").length + 1;
   const titleElement = element.searchXpath("title")[0] as Element;
   const subtitleElement = element.searchXpath("subtitle")[0] as Element;
   self.appendElement("header", (self) => {
